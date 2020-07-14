@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %} {{ site.title}} {% endblock %}
+{% block title %} {{ site.title }} {% endblock %}
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
@@ -19,9 +19,6 @@
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
             </ul>
-            <ul class="nav navbar-nav">
-                <li><a href="http://ansible.com">Ansible</a></li>
-            </ul>
         </div>
     </div>
 </div>
@@ -29,6 +26,8 @@
 
 {% block content %}
 <div class="container">
-    {% block page_content %}{% endblock %}
+    <div class="page-header">
+        <h1>Hello, {{ name }}!</h1>
+    </div>
 </div>
 {% endblock %}
