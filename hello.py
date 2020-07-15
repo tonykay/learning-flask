@@ -13,6 +13,19 @@ bootstrap = Bootstrap(app)              # Setting up bootstrap
 
 site = { 'title' : "N Tier Flask App" } # My additions for Title, simplify passing metadata
 
+class NameForm(FlaskForm):
+    name = StringField('What is your name', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+@app.route('/form', methods=['GET', 'POST'])
+def form():
+    name = None
+    form = NameForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        form.name.data = ''
+    return render_template('first_form.html', form=form, name=name)
+
 @app.route('/')
 def index():
     return render_template('index.html', site=site)
@@ -24,6 +37,10 @@ def cheat_pip():
 @app.route('/iframe')                   # Playing with iFrames
 def iframe():
     return render_template('try_iframe.html', site=site)
+
+@app.route('/docs')                   # Playing with iFrames
+def ansible_docs():
+    return render_template('ansible-docs.html', site=site)
 
 @app.route('/user/<name>')              # Simple dynamic content
 def user(name):
