@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pip Cheatsheet - Works on Their Machines - Yak Shaving at Scale</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Pip Cheatsheet" />
+<meta property="og:description" content="Sections Basic Pip Commands Package Management   Resources   home Master CheatSheet Index
+ Basic Pip Commands     Install a python package
+ pip install ansible
+   Install a specific package version
+ pip install ansible==2.7.8
+   Uninstall a python package
+ pip uninstall ansible
+   See what versions are available (use illegal version string!)
+ pip install ansible==foobar" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.cloudassembler.com/cheatsheets/cheatsheet-pip/" />
+<meta property="article:published_time" content="2019-04-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-30T00:00:00+00:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/static.css"><link rel="stylesheet" href="/css/material-design-fonts.css">
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Works on Their Machines - Yak Shaving at Scale" rel="home">
+				<div class="logo__title">Works on Their Machines - Yak Shaving at Scale</div>
+				<div class="logo__tagline">Tony Kay&#39;s DevSecOps Blog on Cloud and Container Automation, Security, and Application Deployment</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/">
+				<i class='fa fa-heart'></i>
+				<span class="menu__text">Home</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/post/index-virtualenvs/">
+				
+				<span class="menu__text">Ansible and VirtualEnvs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/cheatsheets/index-cheatsheets/">
+				
+				<span class="menu__text">Cheatsheets</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Pip Cheatsheet</h1>
+			
+		</header><div class="content post__content clearfix">
+			<div id="toc" class="toc">
+<div id="toctitle">Sections</div>
+<ul class="sectlevel1">
+<li><a href="#_basic_pip_commands">Basic Pip Commands</a>
+<ul class="sectlevel2">
+<li><a href="#_package_management">Package Management</a></li>
+</ul>
+</li>
+<li><a href="#_resources">Resources</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="/cheatsheets/index-cheatsheets">
+<p><i class="material-icons md-dark md-active">home</i> 
+  Master CheatSheet Index</a></p>
+</div>
+<div class="sect1">
+<h2 id="_basic_pip_commands">Basic Pip Commands</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install a python package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip install ansible</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install a specific package version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip install ansible==2.7.8</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uninstall a python package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip uninstall ansible</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See what versions are available (use illegal version string!)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip install ansible==foobar</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upgrade a package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip install --upgrade ansible</code> or <code>pip install ansible -U</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><a href="/cheatsheets/index-cheatsheets">
+<p><i class="material-icons md-dark md-active">home</i> 
+  Master CheatSheet Index</a> <a href="#TOP">
+<i class="material-icons md-dark md-active">toc</i> 
+Top of Page</a></p>
+</div>
+<div class="sect2">
+<h3 id="_package_management">Package Management</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List installed packages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip list</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List outdated installed packages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip list --outdated</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upgrade installed package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip install --upgrade  ansible</code>  or <code>-U</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Capture installed packages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip freeze &gt; requirements.txt</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install a dependencies file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip freeze -r requirements.txt</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for a package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pip search foo</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_deleting_secondary_or_unwanted_dependencies_not_so_easy_hacky_solution">Deleting secondary or unwanted dependencies, not so easy, hacky solution? :(</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Capture your dependencies <code>pip freeze &gt; requirements.ym;</code></p>
+</li>
+<li>
+<p>Edit <code>requirements.yml</code> removing unwanted dependencies</p>
+</li>
+<li>
+<p>Make a new virtualenv</p>
+</li>
+<li>
+<p>Install your new dependencies list <code>pip install -r requirements.yml</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="/cheatsheets/index-cheatsheets">
+<p><i class="material-icons md-dark md-active">home</i> 
+  Master</a> <a href="#TOP">
+<i class="material-icons md-dark md-active">toc</i> 
+Top of Page</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources">Resources</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pypi.org/">Python Package Index (PyPI)</a></p>
+</li>
+<li>
+<p><a href="https://pip.pypa.io/en/stable/">Pip Documentation</a></p>
+</li>
+<li>
+<p><a href="https://docs.python.org/3/installing/index.html">Installing Packages - Python Documentation</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/cheatsheets/" rel="tag">cheatsheets</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/pip/" rel="tag">pip</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/ansible/" rel="tag">ansible</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/python/" rel="tag">python</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Tony Kay avatar" src="/images/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Tony Kay</span>
+	</div>
+	<div class="authorbox__description">
+		Team lead for Automation and Management in Red Hat&#39;s GPTE DevOps and Automation team. Working globally, I focus primarily on Hybrid Cloud Automation with Ansible. About 2/3rds of my time is automating production cloud deployments and developing both code and training content. I also deliver Automation training globally to both Red Hat and Partner Consultants and Architects on cloud infrastructure using Ansible and on OpenShift/Kubernetes.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/cheatsheets/index-cheatsheets/" rel="prev">
+			<span class="post-nav__caption">«&thinsp;Previous</span>
+			<p class="post-nav__post-title">Pragmatic Cheatsheets</p>
+		</a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "works-on-their-machines" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 Tony Kay.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+<script src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

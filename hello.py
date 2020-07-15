@@ -13,6 +13,14 @@ site = { 'title' : "N Tier Flask App" }
 def index():
     return render_template('index.html', site=site)
 
+@app.route('/pip')
+def cheat_pip():
+    return render_template('pip.html', site=site)
+
+@app.route('/iframe')
+def iframe():
+    return render_template('try_iframe.html', site=site)
+
 @app.route('/user/<name>')
 def user(name):
     # return render_template('user.html', name=name, site_title=site_title)
