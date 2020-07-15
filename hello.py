@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from flask import Flask, redirect, render_template, session, url_for
-# from flask.helpers import url_for
+from flask import Flask, render_template, session, redirect, url_for, flash
+from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
-from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'r3dh4t1!'   # For now, externalize later
@@ -20,13 +20,13 @@ class NameForm(FlaskForm):
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
-    # name = None
     form = NameForm()
     if form.validate_on_submit():
+        old_name = session.get('name')
+        if old_name is not None and old_name != form.name.data:
+            flash('Looks like you have changed your name!')
         session['name'] = form.name.data
         return redirect(url_for('form'))
-        # name = form.name.data
-        # form.name.data = ''
     return render_template('first_form.html', form=form, name=session.get('name'))
 
 @app.route('/')
