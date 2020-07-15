@@ -11,11 +11,12 @@ site = { 'title' : "N Tier Flask App" }
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', site=site)
 
 @app.route('/user/<name>')
 def user(name):
-    return render_template('user.html', name=name, site_title=site_title)
+    # return render_template('user.html', name=name, site_title=site_title)
+    return render_template('user.html', name=name, site_title=site_title, site=site)
 #    return '<h1>Hello is {}</h1>'.format(name)
 
 @app.route('/user2/<name>')
