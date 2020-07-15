@@ -4,6 +4,8 @@ Learning application based on the book "Flask Web Development"
 
 
 === Usage
+
+.Command line
 +
 [source,bash]
 ----

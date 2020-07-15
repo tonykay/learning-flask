@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect, render_template, session, url_for
+# from flask.helpers import url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -19,12 +20,14 @@ class NameForm(FlaskForm):
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
-    name = None
+    # name = None
     form = NameForm()
     if form.validate_on_submit():
-        name = form.name.data
-        form.name.data = ''
-    return render_template('first_form.html', form=form, name=name)
+        session['name'] = form.name.data
+        return redirect(url_for('form'))
+        # name = form.name.data
+        # form.name.data = ''
+    return render_template('first_form.html', form=form, name=session.get('name'))
 
 @app.route('/')
 def index():
