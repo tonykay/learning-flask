@@ -1,14 +1,17 @@
 #!/usr/bin/env python
 
 from flask import Flask, redirect, render_template
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'r3dh4t1!'   # For now, externalize later
 
-bootstrap = Bootstrap(app)
+bootstrap = Bootstrap(app)              # Setting up bootstrap
 
-site = { 'title' : "N Tier Flask App" }
+site = { 'title' : "N Tier Flask App" } # My additions for Title, simplify passing metadata
 
 @app.route('/')
 def index():
