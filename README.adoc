@@ -4,8 +4,12 @@ Learning application based on the book "Flask Web Development"
 
 
 === Usage
-
++
+[source,bash]
+----
 export FLASK_APP=hello
 export FLASK_ENV=development    # Turn on debugging (not necessary when app.run(debug=True))
 
 flask run
+----
+
