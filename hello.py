@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask, render_template, session, redirect, url_for, flash
+from flask import Flask, render_template, session, redirect, url_for, flash, jsonify
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from sqlalchemy.sql.schema import PrimaryKeyConstraint
@@ -41,6 +41,13 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
+    def serialize(self):
+        return {
+             'id': self.id,
+              'name': self.username
+        }
+
+
 bootstrap = Bootstrap(app)              # Setting up bootstrap
 
 site = { 'title' : "N Tier Flask App" } # My additions for Title, simplify passing metadata
@@ -48,10 +55,28 @@ site = { 'title' : "N Tier Flask App" } # My additions for Title, simplify passi
 @app.shell_context_processor
 def make_shell_context():
     return dict(db=db, User=User, Role=Role)
-    
+
 class NameForm(FlaskForm):
     name = StringField('What is your name', validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+@app.route('/api/v1/users')
+def api_get_all():
+    try:
+        users = User.query.all()
+        # return render_template('get_all.html', site=site)
+        return  jsonify([e.serialize() for e in users])
+    except Exception as e:
+        return(str(e))    
+
+@app.route('/get_users')
+def get_all():
+    try:
+        users = User.query.all()
+        return render_template('get_all.html', site=site, users=users)
+    except Exception as e:
+        return(str(e))    
+
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
