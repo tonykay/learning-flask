@@ -69,6 +69,14 @@ def api_get_all():
     except Exception as e:
         return(str(e))    
 
+@app.route('/api/v1/ping')
+def api_ping():
+    return jsonify('{ ping: "alive" }')
+
+@app.route('/ping')
+def ping():
+    return "<h1>I'm alive</h1>"
+
 @app.route('/get_users')
 def get_all():
     try:
