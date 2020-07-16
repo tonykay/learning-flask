@@ -12,6 +12,22 @@
     <p>Happy to see you again</p>
     {% endif %}
 </div>
+<table class="table">
+  <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+	</thead>
+	<tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.username }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
           <tr>
             <td>Name is {{ session.name }}</td>
             <td>Name is {{ users }}</td>
