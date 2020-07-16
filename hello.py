@@ -45,6 +45,10 @@ bootstrap = Bootstrap(app)              # Setting up bootstrap
 
 site = { 'title' : "N Tier Flask App" } # My additions for Title, simplify passing metadata
 
+@app.shell_context_processor
+def make_shell_context():
+    return dict(db=db, User=User, Role=Role)
+    
 class NameForm(FlaskForm):
     name = StringField('What is your name', validators=[DataRequired()])
     submit = SubmitField('Submit')
